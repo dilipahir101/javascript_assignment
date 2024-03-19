@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silder_onclick</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .slider-chang
+        {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+        .silder img{
+            height: 637px;
+            width: 100%;
+            transition: 0.5s;
+            
+        }
+        .silder img:hover{
+            transform: scale(1.1);
+        }
+        .arrow
+        {
+            border-radius: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            color: black;
+            background-color: rgb(223, 212, 212,0.712);
+            padding: 30px 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .next
+        {
+            right: 10px;
+        }
+        .prev
+       {
+        left: 10px;
+       }
+       .text
+       {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.53);
+        padding: 10px 0px;
+       }
+       .silder{
+        display: none;
+    
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="slider-chang">
+        <div class="silder">
+            <img src="/slider.html/img-1.jpg" alt="">
+            
+        </div>
+        <div class="silder">
+            <img src="/slider.html/img-2.jpg" alt="">
+            
+        </div>
+        <div class="silder">
+            <img src="/slider.html/img-3.jpg" alt="">
+            
+        </div>
+        <div class="silder">
+            <img src="/slider.html/img-4.jpg" alt="">
+            
+        </div>
+        <div class="silder">
+            <img src="/slider.html/img-5.jpg" alt="">
+            
+        </div>
+
+        <!-- pre -->
+        <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+        <!-- next -->
+        <span class="arrow next" onclick="controller(1)">&#10095;</span> 
+
+    </div>
+
+    <script>
+
+        index = 0;
+
+        // next,pre :- x
+        function controller(x)
+        {
+            index = index + x; 
+            slideshow(index);
+        }
+
+        // slideshow(index);/
+        function slideshow(num)
+        {
+            let slides = document.getElementsByClassName('silder');
+            // console.log(slides);
+
+            //last 0 
+            if(num == slides.length)
+            {
+                index=0;
+                num=0
+            }
+
+            if(num < 0)
+            {
+                index = slides.length-1; 
+                num = slides.length-1;
+            }
+            
+            for(let y of slides)
+            {
+                y.style.display = "none"
+            }
+           
+            slides[num].style.display = "block";
+            
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>

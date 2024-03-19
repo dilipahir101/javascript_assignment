@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ''
+    <!-- Q.7 Check if typeof '10' is exactly equal to 10. If not make it exactly equal? -->
+
+    Ans:
+
+    In JavaScript, the typeof operator returns the data type of its operand. The string '10' and the number 10 are not of the same type, so their types are not exactly equal. To make them exactly equal, you can convert one of them to the other type. Here's how you can do it:
+
+    Example:
+
+    // Check if typeof '10' is exactly equal to 10
+    if (typeof '10' !== typeof 10) {
+        // Convert '10' to a number using parseInt or Number
+        let num = parseInt('10');
+        // Alternatively, you can use Number('10')
+        
+        // Check if the converted value is exactly equal to 10
+        if (num === 10) {
+            console.log("Now '10' is exactly equal to 10.");
+        } else {
+            console.log("Conversion failed.");
+        }
+    } else {
+        console.log("The types are already exactly equal.");
+    }
+    
+</body>
+</html>

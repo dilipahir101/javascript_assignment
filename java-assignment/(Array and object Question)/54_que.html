@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Q.54 Form Validtion in JS? -->
+
+<body>
+    <form id="myForm">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Validate username
+            const usernameInput = document.getElementById('username');
+            if (usernameInput.value.trim() === '') {
+                displayError(usernameInput, 'Username is required');
+                return;
+            }
+
+            // Validate email
+            const emailInput = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                displayError(emailInput, 'Invalid email address');
+                return;
+            }
+
+            // Validate password
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.value.trim() === '') {
+                displayError(passwordInput, 'Password is required');
+                return;
+            }
+
+            // If all validation passes, submit the form
+            form.submit();
+        });
+
+        function displayError(inputElement, message) {
+            const errorElement = document.createElement('div');
+            errorElement.classList.add('error-message');
+            errorElement.textContent = message;
+
+            // Insert error message after the input element
+            inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+        }
+    </script>
+</body>
+
+</html>

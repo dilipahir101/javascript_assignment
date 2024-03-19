@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Q.57 how many type of JS Event? How to use it ? -->
+
+<body>
+    <!-- Mouse Events: These events occur when the user interacts with the mouse (e.g., clicks, hovers, drags).
+
+    click: Occurs when the user clicks on an element.
+    mouseover: Occurs when the mouse pointer enters an element.
+    mouseout: Occurs when the mouse pointer leaves an element.
+    mousedown: Occurs when the mouse button is pressed down on an element.
+    mouseup: Occurs when the mouse button is released over an element. -->
+
+    <!-- Keyboard Events: These events occur when the user interacts with the keyboard (e.g., presses keys).
+
+    keydown: Occurs when a key is pressed down.
+    keyup: Occurs when a key is released.
+    keypress: Occurs when a key is pressed and released. -->
+
+    <!-- Form Events: These events occur when interacting with HTML form elements.
+
+    submit: Occurs when a form is submitted.
+    change: Occurs when the value of an input element changes.
+     input: Occurs when the value of an input element changes (similar to change but more frequently).
+    Window Events: These events occur in relation to the browser window.
+
+   load: Occurs when the page and its resources finish loading.
+   resize: Occurs when the browser window is resized.
+   scroll: Occurs when the user scrolls the page.
+   Document Events: These events occur in relation to the document itself.
+
+   DOMContentLoaded: Occurs when the HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+   Focus Events: These events occur when an element gains or loses focus.
+
+   focus: Occurs when an element gains focus.
+   blur: Occurs when an element loses focus -->
+    <button id="myButton">Click Me</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+
+        button.addEventListener('click', function() {
+            console.log('Button clicked!');
+        });
+    </script>
+
+
+</body>
+
+</html>

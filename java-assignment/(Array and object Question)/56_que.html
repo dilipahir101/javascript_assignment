@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Q.56 Dynamic Form Validation in JS? -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Validation Example</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+            display: none;
+            /* Initially hide error messages */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Dynamic Form Validation Example</h2>
+
+    <form id="myForm">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <div id="emailError" class="error-message">Invalid email format</div>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <div id="passwordError" class="error-message">Password must be at least 6 characters long</div>
+        </div>
+        <button type="submit" id="submitButton" disabled>Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const submitButton = document.getElementById('submitButton');
+
+        // Email validation
+        emailInput.addEventListener('input', function() {
+            if (!isValidEmail(emailInput.value.trim())) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+            }
+            checkFormValidity();
+        });
+
+        // Password validation
+        passwordInput.addEventListener('input', function() {
+            if (passwordInput.value.trim().length < 6) {
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+            }
+            checkFormValidity();
+        });
+
+        // Helper function to check form validity
+        function checkFormValidity() {
+            if (isValidEmail(emailInput.value.trim()) && passwordInput.value.trim().length >= 6) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Email validation regex
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Q.37 Use console.log() and escape characters to print the following pattern in JS?
+
+    Ans:
+
+    
+    <script>
+        // Define the number of rows
+const numRows = 5;
+
+// Iterate through each row
+for (let i = 1; i <= numRows; i++) {
+    let row = "";
+    
+    // First column: Consecutive natural numbers
+    row += i + " ";
+    
+    // Second column: Always 1
+    row += "1 ";
+    
+    // Third column: Same as the first column
+    row += i + " ";
+    
+    // Fourth column: Square of the number in the third column
+    row += i * i + " ";
+    
+    // Fifth column: Cube of the number in the third column
+    row += i * i * i;
+    
+    // Output the row
+    console.log(row);
+    document.write(row,"<br>")
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Q.29 Write to show Ans:
+    1) Monday to Sunday using switch case in JS?
+    2) Vowel or Consonant using switch case in JS?
+
+    <script>
+let dayNumber = 3; // Change this number to test different days
+
+let dayName;
+
+switch (dayNumber) {
+  case 1:
+    dayName = "Monday";
+    break;
+  case 2:
+    dayName = "Tuesday";
+    break;
+  case 3:
+    dayName = "Wednesday";
+    break;
+  case 4:
+    dayName = "Thursday";
+    break;
+  case 5:
+    dayName = "Friday";
+    break;
+  case 6:
+    dayName = "Saturday";
+    break;
+  case 7:
+    dayName = "Sunday";
+    break;
+  default:
+    dayName = "Invalid day number";
+
+    // ans2====
+
+    let character = 'a'; // Change this character to test
+
+let result;
+
+switch (character.toLowerCase()) {
+  case 'a':
+  case 'e':
+  case 'i':
+  case 'o':
+  case 'u':
+    result = "Vowel";
+    break;
+  default:
+    result = "Consonant";
+}
+
+console.log("'" + character + "' is a " + result);
+
+}
+
+console.log("The day corresponding to " + dayNumber + " is " + dayName);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Q.51 Write a JavaScript program to get the current date. Expected Output : mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy? -->
+
+<body>
+    <script>
+        function getCurrentDate(separator = '-') {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+
+            return `${month}${separator}${day}${separator}${year}`;
+        }
+
+
+        console.log(getCurrentDate('-'));
+        console.log(getCurrentDate('/'));
+    </script>
+
+</body>
+
+</html>

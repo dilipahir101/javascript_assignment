@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Q.9 Write a JavaScript program to calculate days left until next Christmas?
+    Ans:
+
+    <script>
+        
+let currentDate = new Date();
+
+
+let currentYear = currentDate.getFullYear();
+
+
+let nextChristmas = new Date(currentYear, 12, 25); 
+
+
+if (currentDate.getTime() > nextChristmas.getTime()) {
+    nextChristmas = new Date(currentYear + 1, 11, 25);
+}
+
+let timeDiff = nextChristmas.getTime() - currentDate.getTime();
+
+
+let daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+// Print the result
+console.log("Days left until next Christmas:", daysLeft);
+
+document.write("Days left until next Christmas:", daysLeft);
+
+    </script>
+</body>
+</html>

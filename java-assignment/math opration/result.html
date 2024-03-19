@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1,h2 {
+        text-align: center;
+    }
+    
+    label {
+        font-size: 25px;
+    }
+    
+    input {
+        width: 40%;
+        height: 25px;
+    }
+    
+    button {
+        padding: 12px 45px;
+        font-size: 20px;
+        margin: 0 260px;
+        transition: 0.7s;
+    }
+    button:hover{
+        border-radius: 20px;
+        background-color: gray;
+        color: white;
+    }
+    
+    div {
+        margin: 0 100px;
+        font-size: 20px;
+        font-size: 25px;
+        /* color: blue; */
+    }
+</style>
+
+<body>
+
+    <table border="2" align="center" cellpadding="5" cellspacing="0" style="width: 35%; height: 500px;">
+
+        <tr>
+
+            <td>
+                <h1>Marksheet for Information Technology</h1>
+                <h2>Enter mark</h2>
+                <label for="C language">1.C language</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="C language" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="C++ language">2.C++ language</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="C++ language" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="Database">3. Database</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="Database" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="Html">4. Html</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="Html" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="css">5. css</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="css" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="phd">6. php</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="php" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+
+                <label for="Core java">7. Core java</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="Core java" class="marks" min="0" max="50" style="font-size: 15px;"><br><br>
+                <button onclick="calculateTotal()">Result</button>
+                <!-- <p id="total">total is:</p> -->
+                <div id="total">
+
+                </div>
+
+
+            </td>
+        </tr>
+
+    </table>
+</body>
+<script>
+    function calculateTotal() {
+        var marksInputs = document.querySelectorAll('.marks');
+        var totalMarks = 0;
+
+        marksInputs.forEach(function(input) {
+            totalMarks += parseFloat(input.value);
+        });
+
+
+
+        var totalElement = document.getElementById('total');
+        totalElement.innerHTML = "Total is:<span style='color: red;'>" + totalMarks + "</span>/350";
+    
+        var totalPercentage = (totalMarks / (marksInputs.length * 50)) * 100;
+        totalElement.innerHTML += "Percentage:<span style='color: red;'> " + totalPercentage.toFixed(2) + "</span>%";
+
+
+    } 
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Q.47 What is the drawback of declaring methods directly in JavaScript objects? -->
+
+<body>
+
+    <script>
+        const car = {
+            make: 'Toyota',
+            model: 'Camry',
+            year: 2024,
+            accelerate: function(speed) {
+                return `Accelerating to ${speed} mph...`;
+            },
+            brake: function() {
+                return 'Applying brakes...';
+            }
+        };
+
+
+        const anotherCar = {
+            make: 'Ford',
+            model: 'Mustang',
+            year: 2023,
+            accelerate: function(speed) {
+                return `Accelerating to ${speed} mph...`;
+            },
+            brake: function() {
+                return 'Applying brakes...';
+            }
+        };
+
+        console.log(car.accelerate(60));
+        console.log(anotherCar.accelerate(80));
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        position: relative;
+    }
+    h1{
+        text-align: center;
+    }
+    input{
+transition: 0.9s;
+    }
+    input:hover{
+        color: red;
+    }
+    button{
+        padding: 5px;
+        width: 40px;
+        transition: 0.5s;
+    }
+    button:hover{
+background-color: rgb(192, 175, 173);
+border-radius: 10px;
+    }
+    .as{
+        position: absolute;
+        top:80%;
+        right: 40%;
+          
+    }
+    .result{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
+    
+</style>
+
+<body>
+<table border="2" align="center" cellpadding="5" cellspacing="0" style="width: 50%;" height="300px"> 
+
+    <tr>
+        <td>
+            <h1>Math oprations</h1>
+            <label for="number1">Enter first number</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" id="one" style="font-size: 20px;"><br><br>
+            <label for="number1">Enter Second number</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" id="two" style="font-size: 20px;"><br><br>
+
+            <button onclick="add()">+</button>
+            <button onclick="mul()">-</button>
+            <button onclick="sub()">*</button><br>
+            <button onclick="div()">/</button>
+            <button onclick="">%</button>
+
+
+   <div class="as">Answer is:<label id="result" style="font-size: 10px; color: blue;"></label></div>
+
+
+            
+        </td>
+    </tr>
+
+</table>
+    
+<script>
+
+nm1 = document.getElementById("one")
+        console.log(nm1)
+        nm2 = document.getElementById("two")
+        console.log(nm2);
+
+        function add()
+        {
+           result = parseFloat(nm1.value) + parseFloat(nm2.value)
+           console.log(result);
+
+            document.getElementById("result").innerHTML = `<h1>${result}</h1>`
+        }
+        function mul()
+        {
+           result = parseFloat(nm1.value) - parseFloat(nm2.value)
+           console.log(result);
+
+            document.getElementById("result").innerHTML = `<h1>${result}</h1>`
+        }
+        function div()
+        {
+           result = parseFloat(nm1.value) / parseFloat(nm2.value)
+           console.log(result);
+
+            document.getElementById("result").innerHTML = `<h1>${result}</h1>`
+        }
+        function sub()
+        {
+           result = parseFloat(nm1.value) * parseFloat(nm2.value)
+           console.log(result);
+
+            document.getElementById("result").innerHTML = `<h4>${result}</h4>`
+        }
+</script>
+</body>
+</html>
